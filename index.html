@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sude Koçak - Öğrenci</title>
+  <meta name="description" content="Kişisel blog/portfolyo — metin, resim ve video içerir." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#ust">Özgeçmiş</a>
+      <ul class="nav-links">
+        <li><a href="#hakkimda">hakkımda</a></li>
+        <li><a href="#ozgecmis">özgeçmiş</a></li>
+        <li><a href="#iletisim">iletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- KAPAK (sol içerik / sağ foto) -->
+  <main id="ust" class="split">
+    <section class="left">
+      <div class="intro">
+        <h1>Sude Koçak</h1>
+        <p class="role">Öğrenci</p>
+
+        <div class="info">
+          <p><strong>Telefon:</strong> <a href="tel:+905457956183">(+90) 5457956183</a></p>
+          <p><strong>E-posta:</strong> <a href="mailto:sudekck.24@gmail.com">sudekck.24@gmail.com</a></p>
+          <p><strong>Adres:</strong> Merkez,Isparta </p>
+        </div>
+
+        <p class="socials">
+          <a href="https://www.linkedin.com/in/sude-ko%C3%A7ak-484a0b2bb/" target="_blank" rel="noopener">LinkedIn</a> •
+          <a href="https://x.com/_sudekocak" target="_blank" rel="noopener">Twitter</a>
+        </p>
+
+      </div>
+    </section>
+
+    <aside class="right">
+      
+      <figure class="photo">
+        <img src="ben.jpg" alt="Sude Koçak portre fotoğrafı" />
+      </figure>
+    </aside>
+  </main>
+
+  <!-- HAKKIMDA (metin + resim) -->
+  <section id="hakkimda" class="section">
+    <h2>Hakkımda</h2>
+    <p>Merhaba! Ben Sude Koçak, Süleyman Demirel Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Hem mobil hem web geliştirme denemeleri yapıyor, hangi alandan daha çok keyif aldığımı keşfetmek için küçük projeler üretiyorum. Hedefim portfolyomu güçlendirip front-end/mobil odaklı bir stajla gerçek ürünlerde deneyim kazanmak.</p>
+
+    <div class="grid-2">
+      <div>
+        <ul>
+          <li>Android Studio ile mobil uygulama üzerine çalışma</li>
+          <li>bilgisayar topluluğu yönetiminde yer alma</li>
+          <li>Java Script dilinde kendini geliştirme</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="ben1.jpg" alt="Çalışma ortamından bir kare" />
+        
+      </figure>
+    </div>
+  </section>
+
+  <!-- ÖZGEÇMİŞ + VİDEO (gömülü ve sayfa içinde oynar) -->
+ 
+
+    <h3>(Video)</h3>
+    <div class="video-wrap">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9yT1-19313A?si=QpETH6Ss-y-xDL-t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM (form) -->
+  <section id="iletisim" class="section">
+    <h2>İletişim</h2>
+    <form class="contact" action="mailto:bilgi@sitem.com" method="post" enctype="text/plain">
+      <label>Ad Soyad
+        <input type="text" name="ad" required />
+      </label>
+      <label>E-posta
+        <input type="email" name="email" required />
+      </label>
+      <label>Mesaj
+        <textarea name="mesaj" rows="4" required></textarea>
+      </label>
+      <button type="submit">Gönder</button>
+    </form>
+  </section>
+
+  <!-- FOOTER (© + isim + telefon) -->
+  <footer class="site-footer">
+    <p>© <span id="yil"></span> Sude Koçak • OgrNo: <a href="2321032054">2321032054 </a></p>
+  </footer>
+
+  <script>
+    // Yıl otomatik
+    document.getElementById('yil').textContent = new Date().getFullYear();
+    // Emniyet: Sosyal linkler https ile başlamıyorsa düzelt
+    document.querySelectorAll('.socials a').forEach(a=>{
+      const href=a.getAttribute('href')||'';
+      if(!/^https?:\/\//i.test(href)){ a.setAttribute('href','https://'+href.replace(/^\/+/,'')); }
+    });
+  </script>
+</body>
+</html>
+
