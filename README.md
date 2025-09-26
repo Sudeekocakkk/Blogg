@@ -1,1 +1,1 @@
-# Blogg
+https://sudeekocakkk.github.io/Blogg/
